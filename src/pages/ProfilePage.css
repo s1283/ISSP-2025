@@ -4,6 +4,10 @@
   background: #FFFFFF;
 }
 
+.sidenav-toggle {
+  display: none;
+}
+
 .profile-content {
   flex: 1;
   padding: 130px 366px 104px 366px;

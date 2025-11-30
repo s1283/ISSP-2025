@@ -21,6 +21,10 @@
   overflow-y: auto;
 }
 
+.sidenav-toggle {
+  display: none;
+}
+
 .sidenav-header {
   padding: 2rem 1.5rem 2rem;
   border-bottom: none;

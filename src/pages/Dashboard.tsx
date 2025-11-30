@@ -177,7 +177,7 @@ const Dashboard: React.FC = () => {
     fetchUserData();
   }, [user, navigate]);
 
-  const DEFAULT_GENRES = ["pop"]; 
+  const DEFAULT_GENRES = ["Pop", "Rock"]; 
 
   const fetchAllSongs = async () => {
     const genresToFetch = userPreferences.length > 0 ? userPreferences : DEFAULT_GENRES;
@@ -209,6 +209,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     fetchAllSongs();
+    // eslint-disable-next-line
   }, [userPreferences]);
   
 
@@ -249,10 +250,18 @@ const Dashboard: React.FC = () => {
   };
 
   const handlePlaySong = (song: Song, playlist: Song[] = []) => {
+    // If the clicked song is already the current one, just toggle play/pause
+    if (currentSong && currentSong.id === song.id) {
+      togglePlay();
+      return;
+    }
+  
+    // Otherwise, start playing the new song
     setSongToAdd(song);
     setPlaylist(playlist);
     playSong(song, playlist);
   };
+  
 
   const handlePlayPlaylist = (playlistData: Playlist) => {
     if (playlistData.songs.length > 0) {
@@ -478,7 +487,11 @@ const Dashboard: React.FC = () => {
                             }
                           }}
                         >
-                          <MdPlayArrow size={32} />
+                          {currentSong && likedSongsPlaylist.some(s => s.id === currentSong.id) && isPlaying ? (
+                            <MdPause size={32} />
+                          ) : (
+                            <MdPlayArrow size={32} />
+                          )}
                         </button>
                       </div>
                     </div>
@@ -543,7 +556,11 @@ const Dashboard: React.FC = () => {
                   <div className="song-card-image-wrapper" onClick={() => handlePlaySong(song, searchResults)}>
                     <img src={song.artwork} alt={song.title} className="song-card-image" />
                     <div className="song-card-play-overlay">
-                      <MdPlayArrow color="#fff" size={32} />
+                      {currentSong?.id === song.id && isPlaying ? (
+                        <MdPause color="#fff" size={32} />
+                      ) : (
+                        <MdPlayArrow color="#fff" size={32} />
+                      )}
                     </div>
                   </div>
                   <div className="song-card-info">
@@ -600,12 +617,6 @@ const Dashboard: React.FC = () => {
                 </div>
               ))}
             </div>
-            <button 
-              onClick={fetchAllSongs}
-              className="load-more-btn"
-            >
-              Load More Songs
-            </button>
           </div>
         )}
       </main>

@@ -16,6 +16,7 @@ import {
   MdMoreHoriz,
   MdRepeat,
   MdShuffle,
+  MdMenu
 } from 'react-icons/md';
 import { auth, db } from '../firebaseConfig';
 import { User, signOut } from 'firebase/auth';
@@ -23,6 +24,7 @@ import { collection, getDocs, doc, addDoc, updateDoc } from 'firebase/firestore'
 import AudioVisualizer from '../components/AudioVisualizer';
 import VolumeControl from '../components/VolumeControl';
 import PlaybackSpeedControl from '../components/PlaybackSpeedControl';
+import EmojiReaction from '../components/EmojiReaction';
 import './PlaylistDetail.css';
 import { Song } from '../data/musicLibrary';
 import { useAudioPlayerContext } from '../context/AudioPlayerContext';
@@ -66,6 +68,7 @@ const PlaylistDetail: React.FC = () => {
   const [playlist, setPlaylist] = useState<Playlist | null>(null);
   const [loading, setLoading] = useState(true);
   const [likedSongs, setLikedSongs] = useState<number[]>([]);
+  const [isSidenavOpen, setIsSidenavOpen] = useState(false);
 
   const {
     currentSong,
@@ -76,7 +79,7 @@ const PlaylistDetail: React.FC = () => {
     playbackRate,
     isRepeat,
     isShuffle,
-    currentPlaylist: contextCurrentPlaylist,
+    currentPlaylist,
     playSong,
     togglePlay,
     playNext,
@@ -180,6 +183,32 @@ const PlaylistDetail: React.FC = () => {
     playSong(song, songsList);
   };
 
+  const handleEmojiSelect = async (emoji: string) => {
+    if (!currentSong || !user) return;
+    
+    try {
+      const now = new Date();
+      const historyRef = collection(db, "users", user.uid, "moodHistory");
+      await addDoc(historyRef, {
+        songId: currentSong.id,
+        title: currentSong.title,
+        artist: currentSong.artist,
+        artwork: currentSong.artwork,
+        emoji: emoji,
+        timestamp: Math.floor(playerTime),
+        listenedAt: now,
+        day: now.getDate(),
+        month: now.getMonth() + 1,
+        year: now.getFullYear(),
+        hours: now.getHours(),
+        minutes: now.getMinutes(),
+        seconds: now.getMinutes(),
+      });
+    } catch (err) {
+      console.error("Failed to save emoji reaction:", err);
+    }
+  };
+
   const toggleLike = async (song: Song) => {
     if (!user) return;
 
@@ -247,7 +276,7 @@ const PlaylistDetail: React.FC = () => {
 
   return (
     <div className="playlist-detail">
-      <aside className="sidenav">
+      <aside className={`sidenav ${isSidenavOpen ? 'open' : ''}`}>
         <div className="sidenav-header">
           <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
             <img
@@ -296,6 +325,10 @@ const PlaylistDetail: React.FC = () => {
       </aside>
 
       <main className="playlist-content">
+        <button className={`sidenav-toggle ${isSidenavOpen ? 'shifted' : ''}`} onClick={() => setIsSidenavOpen(!isSidenavOpen)}>
+                  <MdMenu size={24} />
+        </button>
+        
         <div className="playlist-header">
           <button
             className="btn-login"
@@ -383,7 +416,7 @@ const PlaylistDetail: React.FC = () => {
             <button
               className="control-btn"
               onClick={playPrevious}
-              disabled={contextCurrentPlaylist.length === 0}
+              disabled={currentPlaylist.length === 0}
             >
               <MdSkipPrevious size={20} />
             </button>
@@ -396,7 +429,7 @@ const PlaylistDetail: React.FC = () => {
             <button
               className="control-btn"
               onClick={playNext}
-              disabled={contextCurrentPlaylist.length === 0}
+              disabled={currentPlaylist.length === 0}
             >
               <MdSkipNext size={20} />
             </button>
@@ -428,6 +461,7 @@ const PlaylistDetail: React.FC = () => {
 
           <div className="player-right">
             <div className="volume-controls">
+              <EmojiReaction onEmojiSelect={handleEmojiSelect} />
               <VolumeControl
                 volume={volume}
                 onVolumeChange={setVolume}
@@ -458,8 +492,11 @@ const PlaylistDetail: React.FC = () => {
                   <MdFavorite size={18} /> : <MdFavoriteBorder size={18} />
                 }
               </button>
-              <button className="volume-btn">
-                 <MdMoreHoriz size={18} />
+              <button
+                className="volume-btn"
+                title="Add to playlist"
+              >
+                <MdMoreHoriz size={18} />
               </button>
             </div>
           </div>

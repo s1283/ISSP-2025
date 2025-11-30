@@ -12,6 +12,10 @@
   padding-bottom: 120px;
 }
 
+.sidenav-toggle {
+  display: none;
+}
+
 .timeline-entries {
   display: flex;
   flex-direction: column;
