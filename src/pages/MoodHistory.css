@@ -1,0 +1,174 @@
+/* MoodHistory Page Styling */
+.page-container {
+  margin-left: 315px;
+  padding: 3rem 4rem;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
+}
+
+.loading-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #666666;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #F9F9F9;
+  border-radius: 12px;
+  border: 1px solid #E5E5E5;
+}
+
+.empty-state p {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-hint {
+  font-size: 14px !important;
+  color: #999999 !important;
+}
+
+.mood-table-container {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E5E5;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mood-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+}
+
+.mood-history-table thead {
+  background: #F9F9F9;
+  border-bottom: 2px solid #E5E5E5;
+}
+
+.mood-history-table th {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+.mood-history-table tbody tr {
+  border-bottom: 1px solid #F2F2F2;
+  transition: background-color 0.2s ease;
+}
+
+.mood-history-table tbody tr:hover {
+  background-color: #F9F9F9;
+}
+
+.mood-history-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.mood-history-table td {
+  padding: 1.25rem 1.5rem;
+  font-size: 14px;
+  line-height: 17px;
+  color: #333333;
+}
+
+.song-cell {
+  font-weight: 600;
+  color: #000000;
+}
+
+.artist-cell {
+  color: #666666;
+}
+
+.moods-cell {
+  max-width: 300px;
+}
+
+.mood-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mood-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #F0F0F0;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333333;
+  border: 1px solid #E0E0E0;
+}
+
+.date-cell {
+  color: #666666;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.timestamp-cell {
+  color: #999999;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .page-container {
+    margin-left: 0;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.5rem;
+  }
+  
+  .mood-table-container {
+    overflow-x: auto;
+  }
+  
+  .mood-history-table {
+    min-width: 700px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}

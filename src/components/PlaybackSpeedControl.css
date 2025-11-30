@@ -1,0 +1,97 @@
+.speed-control-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.speed-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  min-width: 60px;
+  min-height: 34px;
+  color: #7A7A7A;
+  transition: color 0.2s ease;
+}
+
+.speed-button svg,
+.speed-button span {
+  pointer-events: none;
+}
+
+.speed-button:hover {
+  color: #ED6F3A;
+}
+
+.speed-label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.speed-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(66, 66, 66, 0.95);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideUp 0.2s ease-out;
+  min-width: 80px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Triangle pointer */
+.speed-menu::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(66, 66, 66, 0.95);
+}
+
+.speed-option {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  min-height: 36px;
+}
+
+.speed-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.speed-option.active {
+  background: #ED6F3A;
+  font-weight: 600;
+}

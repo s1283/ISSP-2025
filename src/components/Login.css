@@ -1,0 +1,348 @@
+/* Login Container */
+.login-container {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #FFFFFF;
+  margin: 0 auto;
+}
+
+/* Log in Title */
+.login-title {
+  position: absolute;
+  width: 150px;
+  height: 104px;
+  left: 366px;
+  top: 153.33px;
+  
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0;
+}
+
+/* Email Field */
+.email-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  
+  position: absolute;
+  width: 708px;
+  height: 113px;
+  left: 366px;
+  top: 267.33px;
+}
+
+/* Password Field */
+.password-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  
+  position: absolute;
+  width: 708px;
+  height: 113px;
+  left: 366px;
+  top: 451px;
+}
+
+/* Field Labels */
+.field-label {
+  width: 708px;
+  height: 29px;
+  
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #303030;
+  
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 16px;
+  
+  width: 708px;
+  min-width: 240px;
+  height: 76px;
+  
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  box-sizing: border-box;
+}
+
+/* Input Field */
+.input-field {
+  width: 676px;
+  height: 52px;
+  border: none;
+  outline: none;
+  background: transparent;
+  
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #1E1E1E;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.input-field::placeholder {
+  color: #757575;
+}
+
+/* Forgot Password Button */
+.forgot-password-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1E1E1E;
+}
+
+.forgot-password-btn:hover {
+  background: #f5f5f5;
+}
+
+/* Login Button */
+.login-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  
+  position: absolute;
+  width: 708px;
+  height: 77px;
+  left: 366px;
+  top: 650.33px;
+  
+  background: #2C2C2C;
+  border: 1px solid #2C2C2C;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #F5F5F5;
+  
+  transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #404040;
+  border-color: #404040;
+}
+
+.login-btn:active {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+/* Google Button */
+.google-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  
+  position: absolute;
+  width: 708px;
+  height: 77px;
+  left: 366px;
+  top: 750.33px;
+  
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #1E1E1E;
+  
+  transition: background-color 0.2s ease;
+}
+
+.google-btn:hover {
+  background: #f5f5f5;
+}
+
+/* Signup Section */
+.signup-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  
+  position: absolute;
+  width: 287px;
+  height: 32px;
+  left: 576px;
+  top: 880.67px;
+}
+
+/* Signup Text */
+.signup-text {
+  width: 207px;
+  height: 32px;
+  
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Signup Button */
+.signup-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  
+  width: 80px;
+  height: 32px;
+  
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1E1E1E;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.signup-btn:hover {
+  background: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+  .login-container {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .login-title,
+  .email-field,
+  .password-field,
+  .forgot-password-btn,
+  .login-btn,
+  .google-btn,
+  .signup-section {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 20px auto;
+  }
+  
+  .login-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .email-field,
+  .password-field {
+    width: 100%;
+    max-width: 708px;
+  }
+  
+  .input-container,
+  .login-btn,
+  .google-btn {
+    width: 100%;
+    max-width: 708px;
+  }
+  
+  .signup-section {
+    width: auto;
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
+
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 708px;
+  margin: 10px auto;
+}

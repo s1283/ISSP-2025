@@ -1,0 +1,12 @@
+.audio-visualizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin: 0 10px;
+}
+
+.visualizer-canvas {
+  display: block;
+  border-radius: 4px;
+}

@@ -1,0 +1,188 @@
+/* Playlist Card */
+.playlist-card {
+  position: relative;
+  width: 270px;
+  height: 358px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.playlist-card:hover {
+  transform: translateY(-2px);
+}
+
+.playlist-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.playlist-title {
+  position: absolute;
+  width: calc(100% - 58px);
+  height: 44px;
+  left: 29px;
+  top: 29px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px !important;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.playlist-controls {
+  position: absolute;
+  bottom: 52px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-button {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  padding: 0;
+}
+
+.control-button:hover {
+  transform: scale(1.15);
+}
+
+.control-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+.heart-btn {
+  color: #1E1E1E;
+}
+
+.heart-btn.liked {
+  color: #ED6F3A;
+}
+
+.heart-btn svg {
+  display: block;
+}
+
+.delete-btn svg path {
+  stroke: #000;
+  stroke-width: 2;
+  fill: none;
+}
+
+.play-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button {
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #000;
+}
+
+.play-button:hover {
+  transform: scale(1.15);
+}
+
+.play-button svg {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .playlist-card {
+    width: 100%;
+    max-width: 270px;
+    height: 300px;
+  }
+
+  .playlist-title {
+    font-size: clamp(18px, 5vw, 36px);
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .playlist-controls {
+    bottom: 40px;
+    left: 30px;
+    right: 30px;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .play-icon {
+    border-left-width: 12px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+  }
+
+  .control-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .playlist-card {
+    height: 250px;
+  }
+
+  .playlist-title {
+    font-size: clamp(16px, 6vw, 28px);
+    top: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .playlist-controls {
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .play-button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .control-button {
+    width: 32px;
+    height: 32px;
+  }
+}

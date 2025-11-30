@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Art Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ED6F3A;
+        }
+        .canvas-container {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background: #ED6F3A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #d96333;
+        }
+        .info {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 BrainTest Music - Album Art Generator</h1>
+        
+        <div class="info">
+            <strong>Quick Album Art Creator</strong><br>
+            This tool generates simple colored squares for album art placeholders.
+            Click "Generate Album Art" to create images for each genre.
+        </div>
+
+        <button onclick="generateAll()">Generate Album Art for All Genres</button>
+        
+        <div class="canvas-container" id="canvasContainer"></div>
+        
+        <div class="info">
+            <strong>How to use:</strong><br>
+            1. Click "Generate Album Art"<br>
+            2. Right-click each image and "Save Image As..."<br>
+            3. Save to: <code>public/assets/images/</code><br>
+            4. Name them: genre-album.jpg (e.g., rock-album.jpg)
+        </div>
+    </div>
+
+    <script>
+        const genres = [
+            { name: 'Rock', color: '#e74c3c' },
+            { name: 'Jazz', color: '#3498db' },
+            { name: 'Classical', color: '#9b59b6' },
+            { name: 'Pop', color: '#e91e63' },
+            { name: 'Country', color: '#ff9800' },
+            { name: 'Blues', color: '#34495e' },
+            { name: 'R&B', color: '#8e44ad' },
+            { name: 'Folk', color: '#16a085' }
+        ];
+
+        function generateAlbumArt(genre, color) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 300, 300);
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, adjustColor(color, -30));
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 300, 300);
+
+            // Add some geometric patterns
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.lineWidth = 2;
+            for (let i = 0; i < 10; i++) {
+                ctx.beginPath();
+                ctx.arc(150, 150, 20 + i * 15, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Genre text
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.font = 'bold 40px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(genre, 150, 150);
+
+            // Musical note
+            ctx.font = '60px Arial';
+            ctx.fillText('♪', 150, 220);
+
+            return canvas;
+        }
+
+        function adjustColor(color, amount) {
+            const num = parseInt(color.replace('#',''), 16);
+            const r = Math.max(0, Math.min(255, (num >> 16) + amount));
+            const g = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + amount));
+            const b = Math.max(0, Math.min(255, (num & 0x0000FF) + amount));
+            return `#${(r << 16 | g << 8 | b).toString(16).padStart(6, '0')}`;
+        }
+
+        function generateAll() {
+            const container = document.getElementById('canvasContainer');
+            container.innerHTML = '';
+
+            genres.forEach(genre => {
+                const canvas = generateAlbumArt(genre.name, genre.color);
+                
+                const wrapper = document.createElement('div');
+                wrapper.style.textAlign = 'center';
+                
+                const label = document.createElement('div');
+                label.textContent = genre.name;
+                label.style.marginTop = '5px';
+                label.style.fontWeight = 'bold';
+                
+                wrapper.appendChild(canvas);
+                wrapper.appendChild(label);
+                container.appendChild(wrapper);
+            });
+        }
+    </script>
+</body>
+</html>

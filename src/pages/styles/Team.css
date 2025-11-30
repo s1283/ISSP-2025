@@ -1,0 +1,278 @@
+.team-page {
+  background: white;
+  min-height: 70vh;
+}
+
+/* Hero Section */
+.team-hero {
+  background: linear-gradient(135deg, #472A76, #ED6F3A);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.team-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.team-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.team-intro {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.team-partnership {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Team Section */
+.team-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.advisory-section {
+  padding: 80px 20px;
+  background: #F4F2EB;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  color: #472A76;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  gap: 40px;
+}
+
+.team-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.team-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Team Card */
+.team-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 5px solid #472A76;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.team-photo {
+  width: 100%;
+  height: 330px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.team-photo-placeholder {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.team-name {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.team-firstname {
+  font-weight: 400;
+}
+
+.team-lastname {
+  font-weight: 700;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #472A76;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.team-org {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: #faf7ff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card h3 {
+  font-size: 1.8rem;
+  color: #472A76;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-hours {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.contact-info strong {
+  color: #472A76;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.btn-contact {
+  display: inline-block;
+  background: #472A76;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.btn-contact:hover {
+  background: #5c3791;
+  color: white;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.location strong {
+  color: #472A76;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.location p {
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 50px 20px;
+  }
+
+  .team-section,
+  .advisory-section {
+    padding: 50px 20px;
+  }
+
+  .team-grid-3,
+  .team-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-section {
+    padding: 50px 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .team-photo {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-info {
+    padding: 20px 15px;
+  }
+
+  .team-name {
+    font-size: 1.1rem;
+  }
+
+  .team-role {
+    font-size: 0.9rem;
+  }
+
+  .team-org {
+    font-size: 0.85rem;
+  }
+}
