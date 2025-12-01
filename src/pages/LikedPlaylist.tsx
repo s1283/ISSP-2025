@@ -130,9 +130,16 @@ const LikedPlaylist: React.FC = () => {
   };
 
   const handlePlaySong = (song: Song, songsList: Song[]) => {
+    if (currentSong && currentSong.id === song.id) {
+      togglePlay();
+      return;
+    }
+  
+    // Otherwise, start playing the new song
     setAudioPlayerPlaylist(songsList);
     playSong(song, songsList);
   };
+  
 
   const handleEmojiSelect = async (emoji: string) => {
       if (!currentSong || !user) return;
@@ -282,7 +289,7 @@ const LikedPlaylist: React.FC = () => {
           </nav>
         </div>
 
-        <div className="version-info">version 5.5.1</div>
+        <div className="version-info"></div>
       </aside>
 
       <main className="playlist-content">

@@ -179,9 +179,16 @@ const PlaylistDetail: React.FC = () => {
   };
 
   const handlePlaySong = (song: Song, songsList: Song[]) => {
+    if (currentSong && currentSong.id === song.id) {
+      togglePlay();
+      return;
+    }
+  
+    // Otherwise, start playing the new song
     setAudioPlayerPlaylist(songsList);
     playSong(song, songsList);
   };
+  
 
   const handleEmojiSelect = async (emoji: string) => {
     if (!currentSong || !user) return;
@@ -321,14 +328,14 @@ const PlaylistDetail: React.FC = () => {
           </nav>
         </div>
 
-        <div className="version-info">version 5.5.1</div>
+        <div className="version-info"></div>
       </aside>
 
       <main className="playlist-content">
         <button className={`sidenav-toggle ${isSidenavOpen ? 'shifted' : ''}`} onClick={() => setIsSidenavOpen(!isSidenavOpen)}>
                   <MdMenu size={24} />
         </button>
-        
+
         <div className="playlist-header">
           <button
             className="btn-login"

@@ -19,7 +19,7 @@
   padding: 40px;
   background: #FFFFFF;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 708px;
   width: 100%;
 }
 
@@ -245,7 +245,7 @@
 
 .google-btn {
   width: 100%;
-  max-width: 500px;
+
   height: 52px;
   padding: 12px;
   background: #FFFFFF;
@@ -419,23 +419,6 @@
 }
 
 /* Responsive adjustments for genre grid */
-@media (max-width: 768px) {
-  .genre-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 8px;
-  }
-  
-  .genre-chip {
-    padding: 10px 12px;
-    font-size: 13px;
-    min-height: 40px;
-  }
-  
-  .final-step-buttons {
-    flex-direction: column;
-  }
-}
-
 @media (max-width: 480px) {
   .genre-grid {
     grid-template-columns: repeat(2, 1fr);
