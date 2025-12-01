@@ -58,7 +58,7 @@ function AppContent() {
 
   return (
     <div className="App">
-      <DebugInfo />
+      {/* <DebugInfo /> */}
       {!isDashboard && <Header />}
       {isDashboard ? <AudioPlayerProvider>{appRoutes}</AudioPlayerProvider> : appRoutes}
       {!isDashboard && <Footer />}

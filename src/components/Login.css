@@ -253,7 +253,7 @@
   transition: background-color 0.2s ease;
 }
 
-.google-btn:hover {
+.login-google-btn:hover {
   background: #f5f5f5;
 }
 
@@ -371,7 +371,7 @@
   
   .input-container,
   .login-btn,
-  .google-btn {
+  .login-google-btn {
     width: 100%;
     max-width: 708px;
   }
