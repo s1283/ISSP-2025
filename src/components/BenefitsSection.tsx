@@ -18,9 +18,15 @@ const BenefitsSection: React.FC = () => {
           <div>
             <h2 className="section-title">Benefits of Music</h2>
             <p className="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Music offers significant therapeutic benefits for individuals living with
+              dementia and Alzheimer's disease, primarily by tapping into areas of
+              the brain that often remain intact long after other memories fade.
+            </p>
+            <p className="section-text">
+              Incorporating music therapy—whether through listening, singing,
+              or movement—enhances the overall quality of life for patients and
+              fosters positive, meaningful interactions between them and their
+              caregivers.
             </p>
           </div>
           <div className="image-container">

@@ -49,9 +49,15 @@ const TrackingSection: React.FC = () => {
           <div>
             <h2 className="section-title">Tracking Mood</h2>
             <p className="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Creating a truly effective custom music playlist for someone with 
+            dementia hinges on deep personalization rooted in their life history and musical preferences. 
+            The goal is to choose music that is highly familiar and emotionally significant, 
+            typically focusing on popular songs, hymns, or genres from the person’s 
+            late adolescence and early adulthood (roughly ages 15 to 30), 
+            as this period often yields the strongest memory recall.
+            </p>
+            <p className="section-text">
+            BrainTest Music provides an easy means of creating your life’s playlist and allowing you to access it anywhere you go.
             </p>
             
             <div className="image-grid">

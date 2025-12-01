@@ -8,9 +8,14 @@ const HowWorksSection: React.FC = () => {
           <div>
             <h2 className="section-title">How it works</h2>
             <p className="section-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Listening to or engaging with familiar music can trigger memories 
+            from a person’s youth, powerful autobiographical memories, and 
+            emotions of clarity and connection. 
+            This may enable communication through verbal means.
+            </p>
+            <p className="section-text">
+            BrainTest Music provides an easy means of creating your life’s playlist 
+            and allowing you to access it anywhere you go.
             </p>
           </div>
           <div className="image-container-grid">

@@ -348,7 +348,7 @@
   .password-field,
   .forgot-password-btn,
   .login-btn,
-  .google-btn,
+  .login-google-btn,
   .signup-section {
     position: relative;
     left: auto;
