@@ -14,7 +14,7 @@ const TrackingSection: React.FC = () => {
           </div>
         </div>
         <div className="tracking-card">
-          <div className="tracking-image-container" style={{backgroundImage: "url('/assets/images/elderly-man 2.png')", backgroundColor: '#90EE90'}}>
+          <div className="tracking-image-container" style={{backgroundImage: "url('/assets/images/senior-enjoying-music-headphones 3.png')", backgroundColor: '#90EE90'}}>
           </div>
           <div className="tracking-content">
             <h3>Listening to Favorites</h3>
